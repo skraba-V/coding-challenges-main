@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #333;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-top: 2rem;
+}
+
+button {
+  margin-top: 1rem;
+}
+
+
+
+.App {
+  font-family: sans-serif;
+  width: 90vw;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.sigCanvas {
+  border: solid;
+}

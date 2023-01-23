@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+  silverstripe:
+    image: brettt89/silverstripe-web:7.4-apache
+    platform: linux/amd64 #enable if M1 Mac
+    volumes:
+       - ./silverstripe:/var/www/html
+    ports:
+      - 8080:80
+    depends_on:
+       - db
+    environment:
+       - DOCUMENT_ROOT=/var/www/html/public
+       - SS_TRUSTED_PROXY_IPS=*
+       - SS_ENVIRONMENT_TYPE=dev
+       - SS_DATABASE_SERVER=db
+       - SS_DATABASE_NAME=gth
+       - SS_DATABASE_USERNAME=root
+       - SS_DATABASE_PASSWORD=root
+       - SS_DEFAULT_ADMIN_USERNAME=admin
+       - SS_DEFAULT_ADMIN_PASSWORD=admin
+
+  db:
+    image: mysql:8.0.29
+    environment:
+       - MYSQL_ROOT_PASSWORD=root
+    volumes:
+       - db-data:/var/lib/mysql
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+volumes:
+     db-data:

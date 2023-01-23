@@ -1,0 +1,7 @@
+.DS_Store
+node_modules
+vendor
+.graphql-generated
+yarn.lock
+/signature-challenge-fullstack/silverstripe/public/_resources
+/signature-challenge-fullstack/silverstripe/public/_graphql
